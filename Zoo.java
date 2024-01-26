@@ -1,40 +1,38 @@
 import java.util.ArrayList;
 
-public class Zoo {
-    private String name;
-    private String description;
-    private ArrayList <Enclosure> enclosures;
+public class zooManager {
+    public String name;
+    public String destription;
+    public ArrayList<Enclosure> enclosures;
 
-    // constructor
     public Zoo (String name, String description, ArrayList<Enclosure> enclosures)
     {
         this.name = name;
-        this.description = description;
+        this.destription = description;
         this.enclosures = enclosures;
     }
 
-    // setters and getters
-    public String getName()
-    {
+    public String getName() {
         return name;
     }
 
-    public String getDescription()
-    {
-        return description;
+    public string getDescription() {
+        return destription;
     }
 
-    public ArrayList<Enclosure> getEnclosures()
-    {
+    public ArrayList<Enclosure> getEnclosures() {
         return enclosures;
     }
-    
-    // methods
+
     public int getTotalEnclosureArea() {
-    	return 0;
+        int totalEnclosureArea = 0;
+        for (int i = 0; i < enclosures.size(); i++) {
+            totalEnclosureArea += enclosures[i].area;
+        }
+        return totalEnclosureArea;
     }
-    
+
     public int countEnclosures() {
-    	return 0;
+        return enclosures.size();
     }
 }
